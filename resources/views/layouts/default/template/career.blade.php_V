@@ -1,0 +1,50 @@
+@include('layouts.default.header')
+<section class="no-padding">
+    <div class="background_image" style="background-image:url('/uploads/images/career.jpg')">
+       <div class="full-screen position-relative">
+          <div class="slider-typography text-center">
+            <div class="banner_center banner_center_career">
+                <h2 class="total_big"><span class="first_big">J</span>oin <span class="first_big">VMS</span> <span class="first_big">F</span>amily</h2>
+                <div class="car_quote"><p>VMS Inc. works toward the digitalization of the future. As entrepreneurs, we offer services with innovation and deliver end-to-end solutions for our clients.
+To transform the businesses in ways the industry has never seen before, VMS Inc. provides innovation and digitalization with Hi-technology. We believe the reason behind every success is our team's strength and proficiency. We are committed to the establishment of a sophisticated, inclusive atmosphere, where everyone is valued and appreciated, no matter who they are. We know that knowledge is continual, hence we are devoted to take part in advancing the future of our our purpose and values. You can learn more about <a class="no_style_a" href="/our-purpose">our purpose and values.</a></p></div>
+
+            </div>
+            
+             <div class="scroll-bottom scroll-bottom-home" >
+                <img src="{{ asset('frontend/default/images/down-arrow.png')}}" >
+             </div>
+          </div>
+       </div>
+    </div>
+</section>
+
+<section>
+
+    <div class="container">
+    @foreach($circular as $key => $c)
+      <div class="job_item">
+        <div class="row">
+                <div class="col-md-2">
+                    <p class="text-center"><span class="serial_text">{{$key+1}}</span></p>
+                </div>
+                <div class="col-md-8">
+                    <p class="date_item">Post Date: {{ date('d M, Y', strtotime($c->post_date)) }}</p>
+                     <p class="post_title text-uppercase">{{strtoupper($c->title)}}</p>
+                    <!-- <p class="date_item red-text">Deadline: {{ date('d M, Y', strtotime($c->post_end_date)) }}</p> -->
+                </div>
+                <div class="col-md-2">
+                    <a class="apply_button button" href="/career/{{$c->id}}"><span>apply now</span></a>
+                </div>
+            </div>
+       </div>
+      @endforeach
+
+    </div>
+
+</section> 
+  
+
+	  
+
+
+@include('layouts.default.footer')
