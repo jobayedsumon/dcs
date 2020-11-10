@@ -118,7 +118,7 @@
 {{--						<img src="{{ asset('') }}/images/service/{{ explode(',',$commercial->image)[0]  }}" alt="">--}}
 
 					<h4 class="box-header"><a href="{{ route('single.service', $commercial->id) }}" title="{{ Helper::get_category_title($commercial->id) }}">{{ Helper::get_category_title($commercial->id) }}</a></h4>
-					<p style="text-align: justify">{{ \Illuminate\Support\Str::limit($commercial->short_description, 200) }}</p>
+					<p style="text-align: justify">{{ \Illuminate\Support\Str::limit($commercial->short_description ?? strip_tags($commercial->description), 200) }}</p>
                     </a>
 				</div>
 				@endforeach

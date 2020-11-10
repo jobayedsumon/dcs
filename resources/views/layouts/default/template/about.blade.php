@@ -107,6 +107,12 @@ color: #fff !important;
 .flex {
     display: flex !important;
 }
+.serviceLink {
+    color: #fff;
+}
+.serviceLink:hover {
+    color: ;
+}
 </style>
 <div id="about_page" class="theme-page">
 	<div class="row gray full-width page-header vertical-align-table" style="background: url('{{ asset("images/about-us.jpg") }}') no-repeat; background-size: cover; height: 360px">
@@ -186,7 +192,7 @@ color: #fff !important;
                             <div class="mr-5">
                             <h3 class="mb-5">{{ $primary->title }}</h3>
                                 @forelse(Helper::get_category($primary->id) as $sub_category)
-                                    <p style="font-size: 16px"><a style="color: #fff" href="{{ route('single.service', $sub_category->id) }}"><i class="fa fa-dot-circle-o"></i> {{ $sub_category->title }}</a></p>
+                                    <p style="font-size: 16px"><a class="serviceLink" href="{{ route('single.service', $sub_category->id) }}"><i class="fa fa-dot-circle-o"></i> {{ $sub_category->title }}</a></p>
                                 @empty
                                 @endforelse
                             </div>
@@ -208,6 +214,7 @@ color: #fff !important;
 				</p>
 			</div>
 		</div>
+
         @include('layouts.default.template.sections.client_section');
 
         @include('layouts.default.template.sections.testimonial_section');

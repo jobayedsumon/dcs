@@ -99,7 +99,7 @@
                             <div class="item">
 
                                 <div class="block img-responsive">
-                                    <img style="object-fit: contain" src="{{ asset('') }}/images/brand/{{ $client->image }}">
+                                    <img class="pb-5" style="object-fit: contain; height: 150px" src="{{ asset('') }}/images/brand/{{ $client->image }}">
                                 </div>
 
                             </div>
@@ -122,7 +122,7 @@
         loop:true,
         margin:10,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 3000,
         responsive:{
             0:{
                 items:4

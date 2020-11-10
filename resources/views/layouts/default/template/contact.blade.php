@@ -71,7 +71,9 @@
 }
 
 .myBtn:hover, .quickButton:hover {
-    color: #000;
+    color: rgba(8, 94, 173, .8);
+    background-color: #fff;
+    border: 1px solid rgba(8, 94, 173, .8);
 }
 </style>
 
@@ -132,7 +134,7 @@
 						<textarea type="text" name="message"  placeholder="Message"></textarea>
 						<small style="color:red"> {{ $errors->first('message') }} </small>
 					</div>
-				  <button type="submit" style="background:#0072AE" class="btn myBtn">Send</button>
+				  <button type="submit" class="btn myBtn">Send</button>
 				</form>
 				  @if(Session::has('message'))
                     <p style="color:green; font-size:20px;">{{ Session::get('message') }}</p>

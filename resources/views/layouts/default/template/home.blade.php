@@ -160,10 +160,9 @@ h2.box-header {
 
 .videoSection {
     background: #f5f5f5 none repeat scroll 0 0;
-    height: 600px;
+    height: 500px;
     padding: 0;
     position: relative;
-    margin-bottom: 100px;
 }
 
 #videoWrap1 {
@@ -324,7 +323,7 @@ h2.box-header {
 
 <section class="videoSection overlay70">
     <div id="videoWrap1">
-        <video class="myVideo" id="" muted="" loop="true" autoplay >
+        <video class="myVideo" id="sliderVideo" loop="true" muted autoplay>
             <source src="{{ asset('uploads/slider.mp4') }}" type="video/mp4">
         </video>
     </div>
@@ -520,7 +519,7 @@ h2.box-header {
                                 <div class="mb-5 firstRow">
                                     <a href="{{ $membership[0]->add_info }}"><img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[0]->image }}"></a>
 
-                                    <a href="{{ $membership[2]->add_info }}"><img width="150px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}"></a>
+                                    <a href="{{ $membership[2]->add_info }}"><img width="200px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}"></a>
 
                                     <a href="{{ $membership[1]->add_info }}"><img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[1]->image }}"></a>
 

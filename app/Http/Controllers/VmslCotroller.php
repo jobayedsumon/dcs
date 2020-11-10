@@ -64,6 +64,7 @@ public function SingleService($id=null, $limit=null){
 	$data['all_category'] = Categories::where('parent_id', '>', 0)->limit(10)->get();
 	$data['id'] = $id;
 
+
     if ($category->title == 'Pest Control Services') {
         return view('layouts.default.template.pest_control_service', $data);
     } else {

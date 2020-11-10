@@ -36,7 +36,7 @@ text-align:center;
     margin-top:20px;
 }
 .single_product img{
-    height:215px;
+    height:150px;
     width:100%;
 }
 .modal{
@@ -270,7 +270,7 @@ input[type=number]::-webkit-outer-spin-button {
 				    @if(!empty($SingleProduct))
 					@foreach($SingleProduct->where('title', 'LIKE', 'Flat up to%')->get() as $product)
 
-                    <div class="column column-1-3 single_product">
+                    <div class="col-3 single_product">
 			            <a href="{{ asset('uploads/images/'.$product->image) }}" class="prettyPhoto cm-preload" title="{{$product->title }}">
 							<img src='{{ asset('uploads/images/'.$product->image) }}' alt='img'>
                             <div class="product_bdr productBox">
@@ -327,7 +327,7 @@ input[type=number]::-webkit-outer-spin-button {
 
                         @foreach($SingleProduct->where('title', 'NOT LIKE', 'Flat up to%')->get() as $product)
 
-                            <div class="column column-1-3 single_product">
+                            <div class="col-3 single_product">
                                 <a href="{{ asset('uploads/images/'.$product->image) }}" class="prettyPhoto cm-preload" title="{{$product->title }}">
                                     <img src='{{ asset('uploads/images/'.$product->image) }}' alt='img'>
                                     <div class="product_bdr productBox">
@@ -370,9 +370,18 @@ input[type=number]::-webkit-outer-spin-button {
                     <div class="border border-dark p-2 mb-5">
                         <h1 class="">
                             COMMERCIAL PEST CONTROL</h1>
+
                     </div>
 
+                    <br>
 
+
+
+
+
+                </div>
+                <div>
+                    <h1> For more information, you can contact us </h1>
                 </div>
 			</div>
 		</div>
