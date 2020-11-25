@@ -1306,7 +1306,7 @@ direction: ltr;
 {
 color: #303030;
 background-color: #FFF;
-padding: 8px 20px;
+padding: 20px;
 background-image: none;
 }
 .menu-container .sf-menu li ul li:first-child a
@@ -1461,7 +1461,7 @@ justify-content: space-between;
 background: #F6F6F6;
 padding: 17px 17px 19px 20px;
 line-height: 24px;
-color: #303030;
+color: #000;
 margin-top: 10px;
 }
 .vertical-menu li:first-child a
@@ -1472,7 +1472,7 @@ margin-top: 0;
 {
 background: #0072AE;
 }
-.vertical-menu li:hover a,
+.vertical-menu li a:hover,
 .vertical-menu li:hover a span
 {
 color: #0072AE;
@@ -2821,7 +2821,7 @@ z-index: 1;
 .background.overlay>*,
 .parallax.overlay>*
 {
-position: relative;
+
 z-index: 2;
 }
 /* --- counters --- */

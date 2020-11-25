@@ -55,6 +55,9 @@ li.template-arrow-horizontal-2 {
 
 .bookNow a:hover {
     box-shadow: 0 6px 14px 0 #666;
+    color: rgba(8, 94, 173, 1) !important;
+    background-color: #fff;
+    border: 1px solid rgba(8, 94, 173, 1);
     transform: scale(1.05);
 }
 .list li {
@@ -182,11 +185,7 @@ background: linear-gradient(90deg, rgba(8, 94, 173, .5) 0%, rgba(8, 94, 173, .8)
                     <a href="#" title="Best pro tips for home cleaning">Blog</a>
                 </li>
                 <li>
-                    <a href="{{ url('/hr-outsourcing') }}" title="Best pro tips for home cleaning">HR-outsourcing </a>
-
-                </li>
-                <li>
-                    <a href="{{ url('/disinfection') }}" title="Best pro tips for home cleaning">Disinfection </a>
+                    <a href="{{ url('/booking') }}" title="Best pro tips for home cleaning">Book Now </a>
 
                 </li>
 
@@ -240,7 +239,6 @@ background: linear-gradient(90deg, rgba(8, 94, 173, .8) 0%, rgba(8, 94, 173, .8)
     <a href="/booking">BOOK NOW</a>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
 
 
@@ -285,6 +283,8 @@ background: linear-gradient(90deg, rgba(8, 94, 173, .8) 0%, rgba(8, 94, 173, .8)
 			}
 			//require_once('C:\xampp\htdocs/dcs/public/style_selector/style_selector.php');
 		?>
+
+<script src="{{ asset('js/lightslider.js') }}"></script>
 
 
 

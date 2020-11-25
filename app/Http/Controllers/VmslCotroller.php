@@ -25,7 +25,7 @@ class VmslCotroller extends Controller{
 
 public function home(){
 
-    $data['title'] = "Home | Dcs-Organization";
+    $data['title'] = "Home | Dcs-Organization Ltd.";
 	$data['slider'] = Slider::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['service'] = Service::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['featuredServices'] = Categories::where('status', 1)->where('is_featured', 1)->orderby('priority', 'ASC')->get();
@@ -54,10 +54,11 @@ public function search(Request $request)
 }
 
 public function SingleService($id=null, $limit=null){
-    $data['title'] = "Service | Dcs-Organization";
+    $data['title'] = "Service | Dcs-Organization Ltd.";
     $category = Categories::where('id', $id)->first();
     if($category->type == 1){
         $data['SingleProduct'] = Product::where('catergory_id', $id);
+        $data['SingleService'] = Service::where('category', $id)->first();
     }elseif($category->type == 2){
         $data['SingleService'] = Service::where('category', $id)->first();
     }
@@ -78,7 +79,7 @@ public function not_found_page(){
 }
 
 public function testimonial_page(){
-    $data['title'] = "Testimonial | Dcs-Organization";
+    $data['title'] = "Testimonial | Dcs-Organization Ltd.";
 	$data['testimonial'] = Testimonial::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['ourbrand'] = Ourbrand::where('status', 1)->orderby('id', 'DESC')->get();
 	return view('layouts.default.template.testimonial', $data);
@@ -86,7 +87,7 @@ public function testimonial_page(){
 
 
 public function services_page(){
-    $data['title'] = "Service | Dcs-Organization";
+    $data['title'] = "Service | Dcs-Organization Ltd.";
 	$data['service'] = DB::table('service')
         ->join('category', 'service.category', '=', 'category.id')
         ->select('service.*', 'category.*')
@@ -95,7 +96,7 @@ public function services_page(){
 	return view('layouts.default.template.service', $data);
 }
 public function service_by_primary_cat($id=null){
-     $data['title'] = "Service | Dcs-Organization";
+     $data['title'] = "Service | Dcs-Organization Ltd.";
 //	$data['service'] = DB::table('service')
 //        ->join('category', 'service.category', '=', 'category.id')
 //        ->select('service.*', 'category.*')
@@ -106,14 +107,14 @@ public function service_by_primary_cat($id=null){
 	return view('layouts.default.template.service', $data);
 }
 public function about_page(){
-    $data['title'] = "About | Dcs-Organization";
+    $data['title'] = "About | Dcs-Organization Ltd.";
 	$data['ourbrand'] = Ourbrand::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['testimonial'] = Testimonial::where('status', 1)->orderby('id', 'DESC')->get();
 	return view('layouts.default.template.about', $data);
 }
 
 public function contact_page(){
-    $data['title'] = "Contact | Dcs-Organization";
+    $data['title'] = "Contact | Dcs-Organization Ltd.";
 	return view('layouts.default.template.contact',  $data);
 }
 
@@ -153,43 +154,43 @@ public function contact_message(Request $request){
 
 
 public function faq_page(){
-    $data['title'] = "Faq | Dcs-Organization";
+    $data['title'] = "Faq | Dcs-Organization Ltd.";
 	$data['commercial_faq']  = Dcsfaq::where('status', 1)->where('type', 1)->orderby('id', 'DESC')->get();
 	$data['residential_faq']  = Dcsfaq::where('status', 1)->where('type', 2)->orderby('id', 'DESC')->get();
 	return view('layouts.default.template.faq', $data);
 }
 public function single_gallery($id=null){
-    $data['title'] = "Gallary | Dcs-Organization";
+    $data['title'] = "Gallary | Dcs-Organization Ltd.";
 	$data['single_gallery']  = Gallary::where('id', $id)->where('status', 1)->first();
 	return view('layouts.default.template.single_gallery', $data);
 }
 
 
 public function portfolio_page(){
-$data['title'] = "Portfolio | Dcs-Organization";
+$data['title'] = "Portfolio | Dcs-Organization Ltd.";
 $data['Portfolios'] = Portfolio::orderby('id', 'DESC')->paginate(18);
 return view('layouts.default.template.portfolio', $data);
 }
 
 public function calculator_page(){
-    $data['title'] = "Calculator | Dcs-Organization";
+    $data['title'] = "Calculator | Dcs-Organization Ltd.";
     return view('layouts.default.template.calculator', $data);
 }
 
 public function order($id){
-     $data['title'] = "Order | Dcs-Organization";
+     $data['title'] = "Order | Dcs-Organization Ltd.";
      return view('layouts.default.template.order', $data);
 }
 
 public function membership(){
-    $data['title'] = "Membership and Accreditation | Dcs-Organization";
+    $data['title'] = "Membership and Accreditation | Dcs-Organization Ltd.";
 	$data['clients'] = Ourbrand::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['membership'] = Membershipaccreditation::where('status', 1)->orderby('id', 'DESC')->get();
      return view('layouts.default.template.membership', $data);
 }
 
 public function careerList(){
-    $data['title'] = "Vacancy Announcement | Dcs-Organization";
+    $data['title'] = "Vacancy Announcement | Dcs-Organization Ltd.";
 	$data['clients'] = Ourbrand::where('status', 1)->orderby('id', 'DESC')->get();
 	$data['circular'] = DB::table('con_circular')->orderby('id', 'DESC')->get();
 
@@ -262,7 +263,7 @@ public function career(Request $req ){
 public function booking_form()
 {
 
-    $data['title'] = "Home | Dcs-Organization";
+    $data['title'] = "Home | Dcs-Organization Ltd.";
     $data['slider'] = Slider::where('status', 1)->orderby('id', 'DESC')->get();
     $data['service'] = Service::where('status', 1)->where('is_featured', 1)->orderby('id', 'DESC')->get();
     $data['testimonial'] = Testimonial::where('status', 1)->orderby('id', 'DESC')->get();

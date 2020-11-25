@@ -20,7 +20,7 @@ class HomeController extends Controller {
 		if(\Session::get('lang') != '')
 		{
 			$this->data['pageLang'] = \Session::get('lang');
-		}	
+		}
 	}
 
 	/**
@@ -29,50 +29,52 @@ class HomeController extends Controller {
 	 * @return Response
 	 */
 
-	
+
 
 
 	public function index( Request $request,  $category = ''){
         \App::setLocale(\Session::get('lang'));
 		if(config('sximo.cnf_front') =='false' && $request->segment(1) =='' ) :
 			return redirect('dashboard');
-		endif; 	
+		endif;
 
 		//print_r( config('sximo'));
 
 		$page = $request->segment(1);
 		\DB::table('tb_pages')->where('alias',$page)->update(array('views'=> \DB::raw('views+1')));
 
-		
+
 		if($page !='') {
 			$sql = \DB::table('tb_pages')->where('alias','=',$page)->where('status','=','enable')->get();
 			$row = $sql[0];
+
 			if(file_exists(base_path().'/resources/views/layouts/'.config('sximo.cnf_theme').'/template/'.$row->filename.'.blade.php') && $row->filename !='')
 			{
 				$page_template = 'layouts.'.config('sximo.cnf_theme').'.template.'.$row->filename;
 			} else {
 				$page_template = 'layouts.'.config('sximo.cnf_theme').'.template.page';
-			}	
+			}
 
 			if($row->access !='')
 			{
-				$access = json_decode($row->access,true)	;	
+				$access = json_decode($row->access,true)	;
 			} else {
 				$access = array();
-			}	
+			}
 
-			// If guest not allowed 
+			// If guest not allowed
 			if($row->allow_guest !=1)
-			{	
-				$group_id = \Session::get('gid');				
-				$isValid =  (isset($access[$group_id]) && $access[$group_id] == 1 ? 1 : 0 );	
+			{
+				$group_id = \Session::get('gid');
+				$isValid =  (isset($access[$group_id]) && $access[$group_id] == 1 ? 1 : 0 );
 				if($isValid ==0)
 				{
 					return redirect('')
-						->with(['message' => __('core.note_restric') ,'status'=>'error']);				
+						->with(['message' => __('core.note_restric') ,'status'=>'error']);
 				}
 			}
-			$this->data['pages'] = $page_template;				
+
+			$this->data['pages'] = $page_template;
 			$this->data['title'] = $row->title ;
 			$this->data['subtitle'] = $row->sinopsis ;
 			$this->data['pageID'] = $row->pageID ;
@@ -86,7 +88,7 @@ class HomeController extends Controller {
 			}
 			else {
 				return view( $page_template, $this->data);
-			}			
+			}
 		}
 		else {
 			$sql = \DB::table('tb_pages')->where('default','1')->get();
@@ -94,7 +96,7 @@ class HomeController extends Controller {
 			if(count($slider)>=1){
 				$this->data['slider'] = $slider;
 			}
-		
+
 			if(count($sql)>=1)
 			{
 				$row = $sql[0];
@@ -105,22 +107,22 @@ class HomeController extends Controller {
 					$page_template = 'layouts.'.config('sximo.cnf_theme').'.template.'.$row->filename;
 				} else {
 					$page_template = 'layouts.'.config('sximo.cnf_theme').'.template.page';
-				}				
+				}
 				$this->data['pages'] = $page_template;
 				$this->data['pageID'] = $row->pageID ;
 				$this->data['content'] = \PostHelpers::formatContent($row->note);
 				$this->data['note'] = $row->note;
 				$page = 'layouts.'.config('sximo.cnf_theme').'.index';
-				return view( $page, $this->data);	
+				return view( $page, $this->data);
 
 			} else {
 				return 'Please Set Default Page';
-			}	
+			}
 		}
 	}
 
 
-	
+
 	public function  getLang( Request $request , $lang='en')
 	{
 		$request->session()->put('lang', $lang);
@@ -131,7 +133,7 @@ class HomeController extends Controller {
 	{
 		\Session::put('themes', $skin);
 		return  Redirect::back();
-	}		
+	}
 
 
 	public function submit( Request $request )
@@ -147,19 +149,19 @@ class HomeController extends Controller {
 			$validation = array();
 			foreach($forms as $key=>$val)
 			{
-				$content[$key] = (isset($_POST[$key]) ? $_POST[$key] : ''); 
+				$content[$key] = (isset($_POST[$key]) ? $_POST[$key] : '');
 				if($val['validation'] !='')
 				{
 					$validation[$key] = $val['validation'];
 				}
 			}
-			
-			$validator = Validator::make($request->all(), $validation);	
-			if (!$validator->passes()) 
+
+			$validator = Validator::make($request->all(), $validation);
+			if (!$validator->passes())
 					return redirect()->back()->with(['status'=>'error','message'=>'Please fill required input !'])
 							->withErrors($validator)->withInput();
 
-			
+
 			if($row->method =='email')
 			{
 				// Send To Email
@@ -167,14 +169,14 @@ class HomeController extends Controller {
 					'email'		=> $row->email ,
 					'content'	=> $content ,
 					'subject'	=> "[ " .config('sximo.cnf_appname')." ] New Submited Form ",
-					'title'		=> $row->name 			
+					'title'		=> $row->name
 				);
-			
+
 				if( config('sximo.cnf_mail') =='swift' )
-				{ 				
+				{
 					\Mail::send('sximo.form.email', $data, function ( $message ) use ( $data ) {
 			    		$message->to($data['email'])->subject($data['subject']);
-			    	});		
+			    	});
 
 				}  else {
 
@@ -182,16 +184,16 @@ class HomeController extends Controller {
 					$headers  	 = 'MIME-Version: 1.0' . "\r\n";
 					$headers 	.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 					$headers 	.= 'From: '. config('sximo.cnf_appname'). ' <'.config('sximo.cnf_email').'>' . "\r\n";
-						mail($data['email'], $data['subject'], $message, $headers);	
+						mail($data['email'], $data['subject'], $message, $headers);
 				}
-				
+
 				return redirect()->back()->with(['status'=>'success','message'=> $row->success ]);
 
 			} else {
-				// Insert into database 
+				// Insert into database
 				\DB::table($row->tablename)->insert($content);
 				return redirect()->back()->with(['status'=>'success','message'=>  $row->success  ]);
-			
+
 			}
 		} else {
 
@@ -202,7 +204,7 @@ class HomeController extends Controller {
 	}
 
 	public function getLoad()
-	{	
+	{
 		$result = \DB::table('tb_notification')->where('userid',\Session::get('uid'))->where('is_read','0')->orderBy('created','desc')->limit(5)->get();
 
 		$data = array();
@@ -214,7 +216,7 @@ class HomeController extends Controller {
 				if($row->postedBy =='' or $row->postedBy == 0)
 				{
 					$image = '<img src="'.asset('uploads/images/system.png').'" border="0" width="30" class="img-circle" />';
-				} 
+				}
 				else {
 					$image = \SiteHelpers::avatar('30', $row->postedBy);
 				}
@@ -226,35 +228,35 @@ class HomeController extends Controller {
 						'text'	=> substr($row->note,0,100),
 						'date'	=> date("d/m/y",strtotime($row->created))
 					);
-			}	
+			}
 		}
-	
+
 		$data = array(
 			'total'	=> count($result) ,
 			'note'	=> $data
-			);	
-		 return response()->json($data);	
+			);
+		 return response()->json($data);
 	}
 
 	public function posts( Request $request ,  $category = ''){
 		$posts = \DB::table('tb_pages')
 				->select('tb_pages.*','tb_users.username',\DB::raw('COUNT(commentID) AS comments'))
 				->leftJoin('tb_users','tb_users.id','tb_pages.userid')
-				->leftJoin('tb_comments','tb_comments.pageID','tb_pages.pageID')		
-				->leftJoin('tb_categories','tb_categories.cid','tb_pages.cid')					
+				->leftJoin('tb_comments','tb_comments.pageID','tb_pages.pageID')
+				->leftJoin('tb_categories','tb_categories.cid','tb_pages.cid')
 				->where('pagetype','post');
-	
+
 				if( $category !=''  ) {
 					$mode = 'category';
 					$this->data['categoryDetail'] = Post::categoryDetail( $category );
-					$posts = $posts->where('tb_categories.alias',$category )->paginate(5);					
+					$posts = $posts->where('tb_categories.alias',$category )->paginate(5);
 				}
 				else {
 					$mode = 'all';
 
 					$posts = $posts->groupBy('tb_pages.pageID')->orderBy('pageID', 'DESC')->paginate(5);
 				}
-		$this->data['title']		= 'Post Articles | Dcs-Organization';
+		$this->data['title']		= 'Post Articles | Dcs-Organization Ltd.';
 		$this->data['posts']		= $posts;
 		$this->data['pages']		= 'secure.posts.posts';
 		$this->data['popular']		= Post::lists('popular');
@@ -262,9 +264,9 @@ class HomeController extends Controller {
 		$this->data['headline']		= Post::lists('headline');
 		$this->data['categories']	= Post::categories(8);
 		$this->data['mode']			= $mode;
-		$this->data['pages'] = 'layouts.'.config('sximo.cnf_theme').'.blog.index';	
+		$this->data['pages'] = 'layouts.'.config('sximo.cnf_theme').'.blog.index';
 		$page = 'layouts.'.config('sximo.cnf_theme').'.index';
-		return view( $page , $this->data);	
+		return view( $page , $this->data);
 	}
 
 	public function read( Request $request , $read = '')  {
@@ -277,12 +279,12 @@ class HomeController extends Controller {
 			'posts'	=> $row ,
 			'comments'	=>  $comments ,
 			'pages' => 'layouts.'.config('sximo.cnf_theme').'.blog.view',
-			'popular'	=> Post::lists('popular') , 
-			'latests'	=> Post::lists('latests') , 
+			'popular'	=> Post::lists('popular') ,
+			'latests'	=> Post::lists('latests') ,
 			'categories'	=> Post::categories(8)
 		];
 		$page = 'layouts.'.config('sximo.cnf_theme').'.index';
-		return view( $page , $data);	
+		return view( $page , $data);
 
 	}
 
@@ -294,7 +296,7 @@ class HomeController extends Controller {
 			'comments'	=> 'required',
 			'user_email'	    => 'email',
 		);
-		$validator = Validator::make($request->all(), $rules);	
+		$validator = Validator::make($request->all(), $rules);
 		if ($validator->passes()) {
 
 			$data = array(
@@ -306,7 +308,7 @@ class HomeController extends Controller {
 					'name'		    => $request->input('name'),
 					'user_email'	=> $request->input('email'),
 					'website'		=> $request->input('website'),
-					'ip_address'    => request()->ip() 
+					'ip_address'    => request()->ip()
 				);
 
 			\DB::table('tb_comments')->insert($data);
@@ -314,7 +316,7 @@ class HomeController extends Controller {
         		->with(['message'=>'Thank You , Your comment has been sent !','status'=>'success']);
 		} else {
 			return redirect('posts/'.$request->input('alias'))
-				->with(['message'=>'The following errors occurred','status'=>'error']);	
+				->with(['message'=>'The following errors occurred','status'=>'error']);
 		}
 	}
 
@@ -325,7 +327,7 @@ class HomeController extends Controller {
 			\DB::table('tb_comments')->where('commentID',$commentID)->delete();
 			return redirect('posts/read/'.$alias)
 				->with(['message'=>'Comment has been deleted !','status'=>'success']);
-       
+
 		} else {
 			return redirect('posts/post/'.$alias)
 				->with(['message'=>'Failed to remove comment !','status'=>'error']);
@@ -335,7 +337,7 @@ class HomeController extends Controller {
 	public function set_theme( $id ){
 		session(['set_theme'=> $id ]);
 		return response()->json(['status'=>'success']);
-	}	
+	}
 
 
 }

@@ -15,11 +15,11 @@ box-shadow: 0px 0px 8px -4px;
 
 
 .product_bdr{
-padding: 10px 10px 20px 10px;
+
 font-size: 12px;
 }
 .product_bdr .more{
-padding: 8px 12px 8px;
+
 }
 .myrow_parent_row .column{
 margin-left: 15px;
@@ -78,20 +78,13 @@ padding:30px;
     width:100% !important;
 }
 .productBox {
-    display: none;
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 .single_product:hover .productBox {
-    display: block;
-    -webkit-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    transition: all 500ms ease;
+    visibility: visible;
+    opacity: 1;
 }
 
 /*.modal {*/
@@ -146,7 +139,9 @@ padding:30px;
 }
 
 .myBtn:hover, .quickButton:hover {
-    color: #000;
+    color: rgba(8, 94, 173, 1);
+    background-color: #fff;
+    border: 1px solid rgba(8, 94, 173, 1);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -185,13 +180,22 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-dialog {
     width: 400px;
 }
+
+
+.bread-crumb li a {
+    color: #fff !important;
+}
+
 </style>
 </div>
+@php
+    $images = explode(',', $SingleService->image);
+@endphp
 <div class="theme-page padding-bottom-100">
-	<div class="row gray full-width page-header vertical-align-table">
+	<div class="row gray full-width page-header vertical-align-table"  style="background: url('{{ asset('images/service') }}/{{ $images[0] }}') no-repeat; background-size: cover; height: 500px">
 		<div class="row">
 			<div class="page-header-left">
-				<h1 style="text-transform: uppercase;">{{ Helper::get_category_title($SingleService->category) }}</h1>
+				<h1 style="text-transform: uppercase; color: #fff">{{ Helper::get_category_title($SingleService->category) }}</h1>
 			</div>
 			<div class="page-header-right">
 				<div class="bread-crumb-container">
@@ -213,7 +217,7 @@ input[type=number]::-webkit-outer-spin-button {
 							&#47;
 						</li>
 						<li>
-							{{ Helper::get_category_title($SingleService->category) }}
+                            <a href="">{{ Helper::get_category_title($SingleService->category) }}</a>
 						</li>
 					</ul>
 				</div>
@@ -261,16 +265,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 
             <div class="column column-3-4 myrow_parent_row">
+                <div class="border border-dark p-2 mb-5">
+                    <h1 class="text-center">
+                        GENERAL PEST CONTROL FOR RESIDENTIAL - (GUARANTEE: 03 MONTHS )</h1>
+                </div>
 				<div class="row">
-                    <div class="border border-dark p-2 mb-5">
-                        <h1 class="">
-                            GENERAL PEST CONTROL FOR RESIDENTIAL-(GUARANTEE 03 MONTHS )</h1>
-                    </div>
+
 
 				    @if(!empty($SingleProduct))
 					@foreach($SingleProduct->where('title', 'LIKE', 'Flat up to%')->get() as $product)
 
-                    <div class="col-3 single_product">
+                    <div class="col-3 single_product pb-2">
 			            <a href="{{ asset('uploads/images/'.$product->image) }}" class="prettyPhoto cm-preload" title="{{$product->title }}">
 							<img src='{{ asset('uploads/images/'.$product->image) }}' alt='img'>
                             <div class="product_bdr productBox">
@@ -283,8 +288,9 @@ input[type=number]::-webkit-outer-spin-button {
                                     >QUICK VIEW</a>
                                 </div>
                             </div>
-                            <p style="font-size: 12px">GENERAL PEST CONTROL FOR RESIDENTIAL-(GUARANTEE 03 MONTHS )</p>
-                            <h4>{{ $product->title }}</h4>
+                            <p style="font-size: 13px; font-weight: bold">GENERAL PEST CONTROL FOR RESIDENTIAL-(GUARANTEE 03 MONTHS )</p>
+                            <h4 style="font-size: 16px">{{ $product->title }}</h4>
+                            {!! $product->short_description !!}
 						</a>
 
 					 </div>
@@ -310,11 +316,13 @@ input[type=number]::-webkit-outer-spin-button {
                      <h1 style="padding: 20px; background: #f3d8d8;color: #bb4646; font-family: inherit;">No service on this category.</h1>
                     @endif
 				</div>
+
+                <div class="border border-dark p-2 mb-5">
+                    <h1 class="text-center">
+                        SPECIAL PEST CONTROL FOR RESIDENTIAL - (GUARANTY: 01 YEAR)</h1>
+                </div>
                 <div class="row mt-5">
-                    <div class="border border-dark p-2 mb-5">
-                        <h1 class="">
-                            SPECIAL PEST CONTROL FOR RESIDENTIAL-(GUARANTY: 01 YEAR)</h1>
-                    </div>
+
 
                     @php
 
@@ -339,8 +347,9 @@ input[type=number]::-webkit-outer-spin-button {
                                             >QUICK VIEW</a>
                                         </div>
                                     </div>
-                                    <p style="font-size: 12px">SPECIAL PEST CONTROL FOR RESIDENTIAL-(GUARANTEE 01 YEAR )</p>
-                                    <h4>{{ $product->title }}</h4>
+                                    <p style="font-size: 13px; font-weight: bold">SPECIAL PEST CONTROL FOR RESIDENTIAL-(GUARANTEE: 01 YEAR )</p>
+                                    <h4 style="font-size: 16px">{{ $product->title }}</h4>
+                                    {!! $product->short_description !!}
                                 </a>
 
                             </div>
@@ -366,12 +375,13 @@ input[type=number]::-webkit-outer-spin-button {
                         <h1 style="padding: 20px; background: #f3d8d8;color: #bb4646; font-family: inherit;">No service on this category.</h1>
                     @endif
                 </div>
-                <div class="row mt-5">
-                    <div class="border border-dark p-2 mb-5">
-                        <h1 class="">
-                            COMMERCIAL PEST CONTROL</h1>
+                <div class="border border-dark p-2 mb-5">
+                    <h1 class="text-center">
+                        COMMERCIAL PEST CONTROL</h1>
 
-                    </div>
+                </div>
+                <div class="row mt-5">
+
 
                     <br>
 
@@ -381,7 +391,7 @@ input[type=number]::-webkit-outer-spin-button {
 
                 </div>
                 <div>
-                    <h1> For more information, you can contact us </h1>
+                    <h1> For more information, you can contact us at <a class="myBtn p-2" href="/booking">Book Now</a></h1>
                 </div>
 			</div>
 		</div>
@@ -429,6 +439,7 @@ input[type=number]::-webkit-outer-spin-button {
 @include('layouts.default.template.sections.client_section');
 
 <script>
+
 
     $('.quickButton').click(function (e) {
 

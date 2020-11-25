@@ -3,19 +3,54 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8698a49e-f0ad-4ea7-91f5-d8e01da877c8" name="Default Changelist" comment="1st Commit">
+    <list default="true" id="8698a49e-f0ad-4ea7-91f5-d8e01da877c8" name="Default Changelist" comment="2nd Commit">
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606306030-39860847.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606306042-28835871.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606306354-54992239.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606307204-88419636.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606307382-26061488.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606307420-55516545.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606307456-14104148.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/service/1606307469-92565415.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/lightslider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/style/lightslider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VmslCotroller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VmslCotroller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/dcs.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/dcs.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/slider.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/slider.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sximo.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sximo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bleach-cleaner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bleach-cleaner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/samples/480x693/company3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/samples/480x693/company3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bookingcontroller/public/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bookingcontroller/public/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/pest_control_service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/pest_control_service.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/sections/client_section.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/sections/client_section.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/sections/testimonial_section.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/sections/testimonial_section.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default/template/single_service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default/template/single_service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal_body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal_body.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,12 +174,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iuGwqqxmHD0TiAq4HjFCkHd2PL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -155,7 +193,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -206,16 +244,41 @@
       <workItem from="1604506955264" duration="3796000" />
       <workItem from="1604551816880" duration="787000" />
       <workItem from="1604570103178" duration="4284000" />
-      <workItem from="1604987310941" duration="7953000" />
+      <workItem from="1604987310941" duration="8022000" />
+      <workItem from="1605171069854" duration="580000" />
+      <workItem from="1606198014163" duration="8548000" />
+      <workItem from="1606282113475" duration="9759000" />
     </task>
+    <task id="LOCAL-00001" summary="2nd Commit">
+      <created>1605010167948</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605010167948</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1st Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st Commit" />
+    <MESSAGE value="2nd Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="2nd Commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="465" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604572767653">
@@ -246,28 +309,41 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1602760013464" />
-    <state x="229" y="89" key="SettingsEditor" timestamp="1604383783926">
+    <state x="530" y="73" key="RollbackChangesDialog" timestamp="1606209332544">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1604383783926" />
+    <state x="530" y="73" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606209332544" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1606282576870">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606282576870" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1605010173623">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605010173623" />
     <state x="574" y="109" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604987370684">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="109" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1440.900@0.0.1440.900" timestamp="1604987370684" />
-    <state x="428" y="189" width="670" height="522" key="find.popup" timestamp="1604392969147">
+    <state x="0" y="28" width="1440" height="872" key="dock-window-1" timestamp="1606306656870">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="28" width="1440" height="872" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1606306656870" />
+    <state x="428" y="189" width="670" height="580" key="find.popup" timestamp="1606300623702">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="380" y="0" width="592" height="720" key="find.popup/0.0.1280.720@0.0.1280.720" timestamp="1603797511713" />
-    <state x="428" y="189" width="670" height="522" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1604392969147" />
+    <state x="428" y="189" width="670" height="580" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606300623702" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1602750716017">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1602750716017" />
-    <state x="385" y="196" width="670" height="294" key="search.everywhere.popup" timestamp="1605009887826">
+    <state x="385" y="196" width="670" height="294" key="search.everywhere.popup" timestamp="1606306626343">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="294" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605009887826" />
+    <state x="385" y="196" width="670" height="294" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606306626343" />
     <state x="385" y="196" width="670" height="294" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1604509849058" />
     <state x="385" y="196" width="670" height="294" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1603798879093" />
+    <state x="385" y="196" width="670" height="294" key="search.everywhere.popup/0.25.1440.814@0.25.1440.814" timestamp="1606199395803" />
   </component>
 </project>

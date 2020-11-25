@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
 		<title>{{ $title }}</title>
 		<!--meta-->
@@ -11,14 +11,16 @@
 		<!--slider revolution-->
 		<link rel="shortcut icon" href="{{ asset('') }}/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="{{ asset('') }}/rs-plugin/css/settings.css">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-		<!--style-->
+	<!--style-->
 		<link href='//fonts.googleapis.com/css?family=Raleway:300,400,500&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{{ asset('') }}/style/custom.css">
 
 {{--		<link rel="stylesheet" type="text/css" href="{{ asset('') }}/style/bootstrap.css">--}}
+
+
+{{--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
+
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -35,6 +37,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('') }}/fonts/template/style.css">
 		<link rel="stylesheet" type="text/css" href="{{ asset('') }}/fonts/social/style.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('style/lightslider.css') }}">
 
 
 		<style>

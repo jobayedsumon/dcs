@@ -92,47 +92,45 @@
 
             <div class="col-md-12 col-lg-12 col-centered">
 
-                <div class="owl-carousel owl-theme clientCarousel">
+                <ul class="clientCarousel">
                     @if(!empty(App\Models\Ourbrand::where('status', 1)->orderby('id', 'DESC')->get()))
 
                         @foreach(App\Models\Ourbrand::where('status', 1)->orderby('id', 'DESC')->get() as $client)
-                            <div class="item">
+                            <li class="">
 
                                 <div class="block img-responsive">
                                     <img class="pb-5" style="object-fit: contain; height: 150px" src="{{ asset('') }}/images/brand/{{ $client->image }}">
                                 </div>
 
-                            </div>
+                            </li>
                         @endforeach
                     @else
                     @endif
 
-                </div>
+                </ul>
 
 
             </div>
         </div>
 
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
 
 <script>
-    $('.clientCarousel').owlCarousel({
-        loop:true,
-        margin:10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsive:{
-            0:{
-                items:4
-            },
-            600:{
-                items:4
-            },
-            1000:{
-                items:4
-            }
-        }
+    $(document).ready(function () {
+        $('.clientCarousel').lightSlider({
+            item: 4,
+            slideMove: 4,
+            auto: true,
+            pause: 5000,
+            slideEndAnimation: true,
+            controls: false,
+            pager: false,
+            prevHtml: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+            nextHtml: '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+
+
+        });
     });
+
 </script>

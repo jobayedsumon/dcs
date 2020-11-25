@@ -17,6 +17,8 @@
 
                     <div class="modal_description">
                         {!! $product->short_description !!}
+                        <br>
+                        {!! $product->description !!}
                     </div>
 
                     <div class="variants_selects">
@@ -28,10 +30,9 @@
 
                                             <div class="form-check-label flex flex-col-reverse items-center">
 
-                                                <input min="0" max="9999" step="1" value="0" type="number" class="mr-5" name="count[]">
-
-                                                <input type="text" readonly class="bold mr-5" value="{{ $variation->size }}" name="size[]">
-                                                <input type="text" readonly class="bold" value="{{ $variation->price }}" name="price[]">
+                                                <input min="0" max="9999" step="1" value="0" type="number" class="mr-5 count" name="count[]">
+                                                <input type="text" readonly class="bold mr-5 size" value="{{ $variation->size }}" name="size[]">
+                                                <input type="text" readonly class="bold price" value="{{ $variation->price }}" name="price[]">
                                             </div>
                                         </div>
                                     @empty
@@ -54,6 +55,16 @@
 
 
 <script>
+
+
+    $('.count').on('change', function () {
+      let size = $(this).siblings('.size').val().slice(0, 4);
+      let total = size * $(this).val();
+      $(this).siblings('.price').val(total);
+    });
+
+
+
 
     $('#addToCartModal').click(function (e) {
 

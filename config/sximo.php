@@ -1,11 +1,11 @@
 <?php 
 return [
-'cnf_appname' 			=> 'DCS Organization',
-'cnf_appdesc' 			=> 'DCS Organization',
-'cnf_comname' 			=> 'VMSL',
-'cnf_email' 			=> 'concaveit@gmail.com',
-'cnf_metakey' 			=> 'DCS Organization',
-'cnf_metadesc' 		=> 'DCS Organization',
+'cnf_appname' 			=> 'DCS Organization Ltd.',
+'cnf_appdesc' 			=> 'DCS Organization Ltd.',
+'cnf_comname' 			=> 'DCS Organization Ltd.',
+'cnf_email' 			=> 'hello@dcsorgbd.com',
+'cnf_metakey' 			=> 'DCS Organization Ltd.',
+'cnf_metadesc' 		=> 'DCS Organization Ltd.',
 'cnf_group' 			=> '3',
 'cnf_activation' 		=> 'manual',
 'cnf_multilang' 		=> '1',

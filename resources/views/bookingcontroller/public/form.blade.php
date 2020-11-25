@@ -196,6 +196,17 @@
         width: 100%;
         color: #fff;
     }
+
+    option:disabled {
+        color: #000 !important;
+        font-weight: bold !important;
+        font-size: 20px !important;
+    }
+    option:invalid {
+        color: #000 !important;
+        font-weight: bold !important;
+        font-size: 20px !important;
+    }
     .servicesContact button {
         background: #0072AE none repeat scroll 0 0;
         color: #fff;

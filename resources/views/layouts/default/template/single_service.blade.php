@@ -125,13 +125,19 @@ padding:30px;
 .flex {
     display: flex !important;
 }
+.bread-crumb li a {
+    color: #fff !important;
+}
 </style>
 </div>
+@php
+    $images = explode(',', $SingleService->image);
+@endphp
 <div class="theme-page padding-bottom-100">
-	<div class="row gray full-width page-header vertical-align-table">
+	<div class="row gray full-width page-header vertical-align-table" style="background: url('{{ asset('images/service') }}/{{ $images[0] }}') no-repeat; background-size: cover; height: 500px">
 		<div class="row">
 			<div class="page-header-left">
-				<h1 style="text-transform: uppercase;">{{ Helper::get_category_title($SingleService->category) }}</h1>
+				<h1 style="text-transform: uppercase; color: #fff">{{ Helper::get_category_title($SingleService->category) }}</h1>
 			</div>
 			<div class="page-header-right">
 				<div class="bread-crumb-container">
@@ -153,7 +159,7 @@ padding:30px;
 							&#47;
 						</li>
 						<li>
-							{{ Helper::get_category_title($SingleService->category) }}
+                            <a href="">{{ Helper::get_category_title($SingleService->category) }}</a>
 						</li>
 					</ul>
 				</div>
@@ -170,7 +176,7 @@ padding:30px;
 				    @if(!empty($all_category))
 				    @foreach($all_category as $category)
 					<li>
-						<a style="color: #000" href="<?php echo route('single.service', $category->id) ?>" title="{{ $category->title }}">
+						<a href="<?php echo route('single.service', $category->id) ?>" title="{{ $category->title }}">
 							{{ $category->title }}
 						</a>
 					</li>
@@ -246,12 +252,8 @@ padding:30px;
 					    $images = explode(',', $SingleService->image);
 					@endphp
 					<div class="row single_service">
-    				     <div class="col-md-6">
-    				         <img src="{{ asset('images/service') }}/{{ $images[0] }}" alt='img'>
-    				     </div>
-    				     <div class="col-md-6">
-    				         <img src="{{ asset('images/service') }}/{{ $images[1] }}" alt='img'>
-    				     </div>
+
+
     				     <div class="col-md-12">
     				         <h2 class="mt-3">{{ Helper::get_category_title($SingleService->category) }}</h2>
     				         {!! $SingleService->description !!}

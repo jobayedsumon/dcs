@@ -260,6 +260,12 @@ h2.box-header {
     content: '';
 }
 
+.slidArrow {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
 #playVideos.active:after {
     content: '\f04c';
     font-family: FontAwesome;
@@ -318,6 +324,8 @@ h2.box-header {
 .serviceDetails {
     text-align: justify;
 }
+
+
 
 </style>
 
@@ -431,10 +439,10 @@ h2.box-header {
                     <div class="column column-1-4">
                         <ul class="features-list align-right margin-top-30">
                             <li>
-                                <a class="serviceLink" href="{{ route('single.service', $featuredServices[5]->id) }}">
-                                    {{ $featuredServices[5]->title }}
+                                <a class="serviceLink" href="{{ route('single.service', $featuredServices[2]->id) }}">
+                                    {{ $featuredServices[2]->title }}
                                 </a>
-                                <a class="" href="{{ route('single.service', $featuredServices[5]->id) }}"> <p class="serviceDetails">{{ $featuredServices[5]->short_description }}</p></a>
+                                <a class="" href="{{ route('single.service', $featuredServices[2]->id) }}"> <p class="serviceDetails">{{ $featuredServices[2]->short_description }}</p></a>
 
                             </li>
                             <li>
@@ -478,10 +486,10 @@ h2.box-header {
 
                             </li>
                             <li>
-                                <a class="serviceLink" href="{{ route('single.service', $featuredServices[2]->id) }}">
-                                    {{ $featuredServices[2]->title }}
+                                <a class="serviceLink" href="{{ route('single.service', $featuredServices[5]->id) }}">
+                                    {{ $featuredServices[5]->title }}
                                 </a>
-                                <a class="" href="{{ route('single.service', $featuredServices[2]->id) }}"> <p class="serviceDetails">{{ $featuredServices[2]->short_description }}</p></a>
+                                <a class="" href="{{ route('single.service', $featuredServices[5]->id) }}"> <p class="serviceDetails">{{ $featuredServices[5]->short_description }}</p></a>
 
                             </li>
                         </ul>
@@ -517,11 +525,11 @@ h2.box-header {
 
                         <div class="row">
                                 <div class="mb-5 firstRow">
-                                    <a href="{{ $membership[0]->add_info }}"><img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[0]->image }}"></a>
+                                    <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[0]->image }}">
 
-                                    <a href="{{ $membership[2]->add_info }}"><img width="200px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}"></a>
+                                    <img width="200px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}">
 
-                                    <a href="{{ $membership[1]->add_info }}"><img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[1]->image }}"></a>
+                                   <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[1]->image }}">
 
                                 </div>
 
@@ -570,11 +578,13 @@ h2.box-header {
 		<div class="row">
 			@if(!empty($gallarys))
     			@foreach($gallarys as $gallary)
+                    @if($loop->index <= 14)
                     <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{ 'catbtn'.$gallary->category }}">
     					<a href="{{ asset('') }}images/gallery/{{ $gallary->image }}" class="prettyPhoto cm-preload" onmouseover="this.title='{{ Helper::get_category_title($gallary->category) }}';" onclick="this.title='<h4>{{ Helper::get_category_title($gallary->category) }}</h4> {{ $gallary->description }} ';">
     						<img src='{{ asset('') }}images/gallery/{{ $gallary->image }}' alt='img'>
     					</a>
                     </div>
+                    @endif
     			@endforeach
 			@endif
         </div>
@@ -605,7 +615,7 @@ h2.box-header {
         <div class="column column-1-4">
             <div class="counter-box">
                 <div class="ornament-container" style="height: 100%;">
-                    <div class="ornament animated-element duration-3000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 3000ms; animation-delay: 1000ms; transition-delay: 1000ms;"></div>
+                    <div class="ornament animated-element duration-5000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 5000ms; animation-delay: 5000ms; transition-delay: 5000ms;"></div>
                 </div>
                  <div class="facts_wrapper">
                         <h3 class="stat-count count" id="count1">500</h3>
@@ -617,7 +627,7 @@ h2.box-header {
         <div class="column column-1-4">
             <div class="counter-box">
                 <div class="ornament-container" style="height: 70%;">
-                    <div class="ornament animated-element duration-3000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 3000ms; animation-delay: 1000ms; transition-delay: 1000ms;"></div>
+                    <div class="ornament animated-element duration-5000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 5000ms; animation-delay: 5000ms; transition-delay: 5000ms;"></div>
                 </div>
                 <div class="facts_wrapper">
                     <h3 class="stat-count count" id="count2">400</h3>
@@ -628,7 +638,7 @@ h2.box-header {
         <div class="column column-1-4">
             <div class="counter-box">
                 <div class="ornament-container" style="height: 100%;">
-                    <div class="ornament animated-element duration-3000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 3000ms; animation-delay: 1000ms; transition-delay: 1000ms;"></div>
+                    <div class="ornament animated-element duration-5000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 5000ms; animation-delay: 5000ms; transition-delay: 5000ms;"></div>
                 </div>
                 <div class="facts_wrapper">
                     <h3 class="stat-count count" id="count3">500</h3>
@@ -639,7 +649,7 @@ h2.box-header {
         <div class="column column-1-4">
             <div class="counter-box">
                 <div class="ornament-container" style="height: 15%;">
-                    <div class="ornament animated-element duration-3000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 3000ms; animation-delay: 1000ms; transition-delay: 1000ms;"></div>
+                    <div class="ornament animated-element duration-5000 animation-ornamentHeight ornamentHeight" data-animation-start="0" style="animation-duration: 5000ms; animation-delay: 5000ms; transition-delay: 5000ms;"></div>
                 </div>
                 <div class="facts_wrapper">
                     <h3 class="stat-count count" id="count4">100</h3>
@@ -782,27 +792,25 @@ h2.box-header {
     </div>
 </section>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <script>
 
 
 
-    $('#membershipCarousel').owlCarousel({
-        loop:true,
-        margin:10,
-        responsive:{
-            0:{
-                items:3
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:3
-            }
-        }
-    });
+    // $('#membershipCarousel').owlCarousel({
+    //     loop:true,
+    //     margin:10,
+    //     responsive:{
+    //         0:{
+    //             items:3
+    //         },
+    //         600:{
+    //             items:3
+    //         },
+    //         1000:{
+    //             items:3
+    //         }
+    //     }
+    // });
 
 
 
@@ -821,10 +829,10 @@ h2.box-header {
                     }
                 }, step);
         }
-        counter("count1", 250, 500, 2000);
-        counter("count2", 200, 400, 1500);
-        counter("count3", 250, 500, 2000);
-        counter("count4", 50, 100, 1000);
+        counter("count1", 0, 500, 5000);
+        counter("count2", 0, 400, 5000);
+        counter("count3", 0, 500, 5000);
+        counter("count4", 0, 100, 5000);
     });
 
     //=======================================================
