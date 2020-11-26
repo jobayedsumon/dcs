@@ -75,11 +75,37 @@
 
     .block {
         width: 250px;
-        height: 160px;
+        height: 180px;
         padding: 20px;
         overflow: hidden;
         background:#fff;
     }
+    .block img {
+        width: 220px;
+        height: 160px;
+        padding-bottom: 20px;
+        padding-right: 5px;
+        object-fit: contain;
+    }
+
+    @media only screen and (max-width: 600px)
+    {
+        .block {
+            width: 120px;
+            height: 100px;
+            padding: 10px;
+            overflow: hidden;
+            background:#fff;
+        }
+        .block img {
+            width: 80px;
+            height: 60px;
+            padding-bottom: 10px;
+            padding-right: 5px;
+            object-fit: contain;
+        }
+    }
+
 </style>
 
 <section id="mycarousel_client" style="background-image:url('{{ asset('') }}/images/company_logo.jpg');">
@@ -98,8 +124,8 @@
                         @foreach(App\Models\Ourbrand::where('status', 1)->orderby('id', 'DESC')->get() as $client)
                             <li class="">
 
-                                <div class="block img-responsive">
-                                    <img class="pb-5" style="object-fit: contain; height: 150px" src="{{ asset('') }}/images/brand/{{ $client->image }}">
+                                <div class="block">
+                                    <img src="{{ asset('') }}/images/brand/{{ $client->image }}">
                                 </div>
 
                             </li>

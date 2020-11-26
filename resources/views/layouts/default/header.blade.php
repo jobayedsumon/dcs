@@ -178,6 +178,11 @@
                 color: #0072AE;
             }
 
+            .fb_dialog_content iframe {
+                right: 20px !important;
+                bottom: 30px !important;
+            }
+
 		</style>
 
 	</head>
@@ -233,55 +238,59 @@
          theme_color="#0072ae">
     </div>
 
+    <div class="container-fluid">
+        <div class="header-container">
+            <!--<div class="header-container sticky">-->
+            <div class="header clearfix">
 
-			<div class="header-container">
-			<!--<div class="header-container sticky">-->
-				<div class="header clearfix">
+                <div class="logo">
+                    <h1>
+                        <a href="{{ url('') }}" title="DCS">
+                            <img src="{{ asset('') }}final.png" srcset="{{ asset('') }}final.png" alt="logo">
+                        </a>
+                    </h1>
 
-					<div class="logo">
-						<h1>
-						<a href="{{ url('') }}" title="DCS">
-							<img src="{{ asset('') }}final.png" srcset="{{ asset('') }}final.png" alt="logo">
-						</a>
-						</h1>
+                </div>
+                <a href="#" class="mobile-menu-switch">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </a>
+                <div class="menu-container clearfix<?php echo (empty($_COOKIE["cm_header_type"]) || $_COOKIE["cm_header_type"]!="type_2" ? ' second-menu' : ''); ?>">
+                    <?php
+                    if(empty($_COOKIE["cm_header_type"])){
 
-					</div>
-					<a href="#" class="mobile-menu-switch">
-						<span class="line"></span>
-						<span class="line"></span>
-						<span class="line"></span>
-						<span class="line"></span>
-					</a>
-					<div class="menu-container clearfix<?php echo (empty($_COOKIE["cm_header_type"]) || $_COOKIE["cm_header_type"]!="type_2" ? ' second-menu' : ''); ?>">
-						<?php
-						if(empty($_COOKIE["cm_header_type"])){
+                        if(File::exists(resource_path('views/layouts/default/menu_1.blade.php'))){
+                            File::requireOnce(resource_path('views/layouts/default/menu_1.blade.php'));
+                        }
 
-							if(File::exists(resource_path('views/layouts/default/menu_1.blade.php'))){
-								File::requireOnce(resource_path('views/layouts/default/menu_1.blade.php'));
-							}
+                        //require_once('menu_2.php');
 
-							//require_once('menu_2.php');
-
-						}else
-							if(File::exists(resource_path('views/layouts/default/menu_1.blade.php'))){
-								File::requireOnce(resource_path('views/layouts/default/menu_1.blade.php'));
-							}
-							//require_once('menu.php');
-						?>
-					</div>
+                    }else
+                        if(File::exists(resource_path('views/layouts/default/menu_1.blade.php'))){
+                            File::requireOnce(resource_path('views/layouts/default/menu_1.blade.php'));
+                        }
+                    //require_once('menu.php');
+                    ?>
+                </div>
 
 
 
-				</div>
+            </div>
 
-{{--                <div class="event__search__floater">--}}
-{{--                    <div class="search__anchor">--}}
-{{--                        <form id="event-search-form" action="/search" method="GET">--}}
-{{--                            <input name="query" type="text" class="search__bar" placeholder="Search...">--}}
-{{--                            <input class="search__submit" type="submit">--}}
-{{--                            <div class="search__toggler"></div>--}}
-{{--                        </form>--}}
+            {{--                <div class="event__search__floater">--}}
+            {{--                    <div class="search__anchor">--}}
+            {{--                        <form id="event-search-form" action="/search" method="GET">--}}
+            {{--                            <input name="query" type="text" class="search__bar" placeholder="Search...">--}}
+            {{--                            <input class="search__submit" type="submit">--}}
+            {{--                            <div class="search__toggler"></div>--}}
+            {{--                        </form>--}}
 
-{{--                    </div>--}}
-{{--                </div>--}}
-			</div>
+            {{--                    </div>--}}
+            {{--                </div>--}}
+        </div>
+    </div>
+
+
+

@@ -115,18 +115,7 @@ display: block;
 			<li><a href="/career" title="FAQ">CAREER</a></li>
 			<li><a href="#" title="FAQ">BLOG</a></li>
 			<li><a href="/contact" title="FAQ">CONTACT US</a></li>
-            <li>
-                <div class="event__search__floater">
-                    <div class="search__anchor">
-                        <form id="event-search-form" action="get">
-                            <input type="text" class="search__bar" placeholder="Search Event">
-                            <input class="search__submit" type="submit">
-                            <div class="search__toggler"></div>
-                        </form>
 
-                    </div>
-                </div>
-            </li>
 		</ul>
 	</nav>
 </div>

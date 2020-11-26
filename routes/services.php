@@ -80,11 +80,6 @@ Route::resource('services/service','Services\ServiceController');
 // End Routes for service 
 
                     
-// Start Routes for categories 
-Route::resource('services/categories','Services\CategoriesController');
-// End Routes for categories 
-
-                    
 // Start Routes for variation 
 Route::resource('services/variation','Services\VariationController');
 // End Routes for variation 
@@ -93,5 +88,15 @@ Route::resource('services/variation','Services\VariationController');
 // Start Routes for order 
 Route::resource('services/order','Services\OrderController');
 // End Routes for order 
+
+                    
+// Start Routes for categories 
+Route::resource('services/categories','Services\CategoriesController');
+// End Routes for categories 
+
+                    
+// Start Routes for contacts 
+Route::resource('services/contacts','Services\ContactsController');
+// End Routes for contacts 
 
                     ?>

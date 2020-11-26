@@ -35,16 +35,16 @@ li.template-arrow-horizontal-2 {
 }
 .bookNow a{
     position: fixed;
-    right: 15px;
-    bottom: 85px;
+    right: 25px;
+    bottom: 30px;
     background-color: rgba(8, 94, 173, .8);
     font-size: 12px;
     padding: 20px;
     text-decoration: none;
     color: #fff;
     border-radius: 50%;
-    height: 65px;
-    width: 65px;
+    height: 60px;
+    width: 60px;
     text-align: center;
     display: flex;
     align-items: center;

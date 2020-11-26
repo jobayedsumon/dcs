@@ -75,7 +75,7 @@
 
 
 <div class="theme-page padding-bottom-100">
-	<div class="row gray full-width page-header vertical-align-table">
+	<div class="row gray full-width page-header vertical-align-table" style="background: url('{{ asset("images/service-page.jpg") }}') no-repeat; background-size: cover; height: 500px">
 		<div class="row">
 			<div class="page-header-left">
 				<h1>OUR SERVICES</h1>
@@ -111,6 +111,7 @@
 				<hr/>
 			</div>
 			<div class="services-list gray clearfix row">
+
 				@if(!empty($service))
 				@foreach ($service as $commercial)
 				<div class="col-4">

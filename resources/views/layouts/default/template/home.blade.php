@@ -78,14 +78,6 @@
 	.active > div:first-child + div + div + div { display:block; }
 }
 
-.block {
-	width: 250px;
-	height: 160px;
-    padding: 20px;
-    overflow: hidden;
-	background:#fff;
-}
-
 .fourBox {
     background-color: #0072AE;
     text-align: center;
@@ -325,6 +317,16 @@ h2.box-header {
     text-align: justify;
 }
 
+@media only screen and (max-width: 600px)
+{
+    .firstRow img {
+        width: 100px !important;
+    }
+    .firstRow:nth-child(2) {
+        width: 150px !important;
+    }
+}
+
 
 
 </style>
@@ -408,7 +410,7 @@ h2.box-header {
 	<div class="col-md-6">
 		<h2 class="box-header">ABOUT US</h2>
 		<!--<p class="description align-center">Providing Housekeeping & Maintenance <br> Services For More Than 07 Years!</p>-->
-		<p class="align-center padding-0 margin-top-27 padding-left-right-35">DCS Organization limited is a professional Facility Management Organization that has been serving in several local & Multi-national companies, Chain Hotels, Airlines offices, Garments, corporate offices etc. for the last six years. DCS Organization limited is supported 100% by Johnson Diversey cleaning Chemicals & treatment; we are pleased to avail the opportunity to enhance the beautifying of your area with the help of world-famous Johnson Diversey Chemical Treatment. We want to be your preferred cleaning & pest control partner to make sure that the service and quality you receive is second to one...</p>
+		<p class="align-center padding-0 margin-top-27 padding-left-right-35 text-justify">DCS Organization limited is a professional Facility Management Organization that has been serving in several local & Multi-national companies, Chain Hotels, Airlines offices, Garments, corporate offices etc. for the last six years. DCS Organization limited is supported 100% by Johnson Diversey cleaning Chemicals & treatment; we are pleased to avail the opportunity to enhance the beautifying of your area with the help of world-famous Johnson Diversey Chemical Treatment. We want to be your preferred cleaning & pest control partner to make sure that the service and quality you receive is second to one...</p>
 		<div class="align-center page-margin-top padding-bottom-16">
 			<a class="learnMore py-2 px-2" href="{{ route('about.page') }}" title="Learn more">Learn more</a>
 		</div>
@@ -431,7 +433,7 @@ h2.box-header {
                     <a class="serviceLink" href="{{ route('single.service', $featuredServices[0]->id) }}">
                         {{ $featuredServices[0]->title }}
                     </a>
-                    <a class="" href="{{ route('single.service', $featuredServices[0]->id) }}"> <p class="serviceDetails">{{ $featuredServices[0]->short_description }}</p></a>
+                    <a class="" href="{{ route('single.service', $featuredServices[0]->id) }}"> <p class="">{{ $featuredServices[0]->short_description }}</p></a>
                 </div>
             </div>
             <div>
@@ -525,11 +527,11 @@ h2.box-header {
 
                         <div class="row">
                                 <div class="mb-5 firstRow">
-                                    <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[0]->image }}">
+                                    <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[0]->image }}" class="img-responsive">
 
-                                    <img width="200px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}">
+                                    <img width="200px" src="{{ asset('') }}uploads/images/membership/{{ $membership[2]->image }}" class="img-responsive">
 
-                                   <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[1]->image }}">
+                                   <img width="100px" src="{{ asset('') }}uploads/images/membership/{{ $membership[1]->image }}" class="img-responsive">
 
                                 </div>
 

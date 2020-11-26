@@ -68,6 +68,18 @@
 						
 					</tr>
 				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Short Description', (isset($fields['short_description']['language'])? $fields['short_description']['language'] : array())) }}</td>
+						<td>{{ $row->short_description}} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Footer', (isset($fields['footer']['language'])? $fields['footer']['language'] : array())) }}</td>
+						<td>{{ $row->footer}} </td>
+						
+					</tr>
+				
 			</tbody>	
 		</table>   
 

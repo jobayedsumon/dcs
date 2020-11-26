@@ -17,8 +17,10 @@ use App\Models\Portfolio;
 use App\Models\Product;
 use App\Models\Membershipaccreditation;
 
+
 use DB;
-use Mail;
+
+use Illuminate\Support\Facades\Mail;
 use function Sodium\compare;
 
 class VmslCotroller extends Controller{
@@ -88,21 +90,15 @@ public function testimonial_page(){
 
 public function services_page(){
     $data['title'] = "Service | Dcs-Organization Ltd.";
-	$data['service'] = DB::table('service')
-        ->join('category', 'service.category', '=', 'category.id')
-        ->select('service.*', 'category.*')
-         ->where('category.parent_id', '=', 1)
+
+	$data['service'] = DB::table('category')
+         ->where('category.type', '!=', 0)
+        ->orderBy('priority', 'ASC')
         ->paginate(6);
 	return view('layouts.default.template.service', $data);
 }
 public function service_by_primary_cat($id=null){
      $data['title'] = "Service | Dcs-Organization Ltd.";
-//	$data['service'] = DB::table('service')
-//        ->join('category', 'service.category', '=', 'category.id')
-//        ->select('service.*', 'category.*')
-//         ->where('category.parent_id', '=', $id)
-//        ->orWhere('service.id', '=', $id)
-//        ->paginate(6);
     $data['service'] = DB::table('category')->where('parent_id', $id)->orderBy('priority', 'ASC')->paginate(6);
 	return view('layouts.default.template.service', $data);
 }
@@ -120,6 +116,7 @@ public function contact_page(){
 
 
 public function contact_message(Request $request){
+
         $rules = [
             'fname' => 'required',
             'email' => 'required|email',
@@ -138,16 +135,23 @@ public function contact_message(Request $request){
             $insert['message'] = $request->message;
             DB::table('contact')->insert($insert);
 
-            $sender = 'DCS@dcs.vmsl.website';
-            $recipient = 'arifindex22@gmail.com';
-            $subject = "DCS Contact";
-            $message = $request->message;
-            $headers = 'From:' . $sender;
-            if (mail($recipient, $subject, $message, $headers)){
-               return redirect()->back()->with('message', "Message send Successfully..!");
-            }else {
-                return redirect()->back()->with('error', "Message send Successfully..!");
-            }
+
+            Mail::send('contact_email' ,
+                array(
+                    'name' => $request->fname . ' ' . $request->lname,
+                    'email' => $request->email,
+                    'user_message' => $request->message,
+                ), function($message) use ($request)
+                {
+                    $message->from('contact@dcsorgbd.com');
+                    $message->to('hello@dcsorgbd.com');
+                    $message->subject('DCS Contact');
+
+                });
+
+            return redirect()->back()->with('message', "Message send Successfully..!");
+
+
         }
 
 }

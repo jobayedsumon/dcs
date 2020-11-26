@@ -1,6 +1,6 @@
 
 
-		 {!! Form::open(array('url'=>'categories', 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')) !!}
+		 {!! Form::open(array('url'=>'contacts', 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')) !!}
 
 	@if(Session::has('messagetext'))
 	  
@@ -15,7 +15,7 @@
 
 
 <div class="col-md-12">
-						<fieldset><legend> Categories</legend>
+						<fieldset><legend> Contacts</legend>
 									
 									  <div class="form-group row  " >
 										<label for="Id" class=" control-label col-md-4 text-left"> Id </label>
@@ -28,9 +28,9 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Title" class=" control-label col-md-4 text-left"> Title </label>
+										<label for="Name" class=" control-label col-md-4 text-left"> Name </label>
 										<div class="col-md-6">
-										  <input  type='text' name='title' id='title' value='{{ $row['title'] }}' 
+										  <input  type='text' name='name' id='name' value='{{ $row['name'] }}' 
 						     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
@@ -38,19 +38,40 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Parent Id" class=" control-label col-md-4 text-left"> Parent Id </label>
+										<label for="Lname" class=" control-label col-md-4 text-left"> Lname </label>
 										<div class="col-md-6">
-										  <select name='parent_id' rows='5' id='parent_id' class='select2 '   ></select> 
+										  <input  type='text' name='lname' id='lname' value='{{ $row['lname'] }}' 
+						     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Type" class=" control-label col-md-4 text-left"> Type </label>
+										<label for="Email" class=" control-label col-md-4 text-left"> Email </label>
 										<div class="col-md-6">
-										  <input  type='text' name='type' id='type' value='{{ $row['type'] }}' 
+										  <input  type='text' name='email' id='email' value='{{ $row['email'] }}' 
 						     class='form-control form-control-sm ' /> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Phone" class=" control-label col-md-4 text-left"> Phone </label>
+										<div class="col-md-6">
+										  <input  type='text' name='phone' id='phone' value='{{ $row['phone'] }}' 
+						     class='form-control form-control-sm ' /> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Message" class=" control-label col-md-4 text-left"> Message </label>
+										<div class="col-md-6">
+										  <textarea name='message' rows='5' id='message' class='form-control form-control-sm '  
+				           >{{ $row['message'] }}</textarea> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -59,45 +80,7 @@
 									  <div class="form-group row  " >
 										<label for="Status" class=" control-label col-md-4 text-left"> Status </label>
 										<div class="col-md-6">
-										  <select name='status' rows='5' id='status' class='select2 '   ></select> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Is Featured" class=" control-label col-md-4 text-left"> Is Featured </label>
-										<div class="col-md-6">
-										  <select name='is_featured' rows='5' id='is_featured' class='select2 '   ></select> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Priority" class=" control-label col-md-4 text-left"> Priority </label>
-										<div class="col-md-6">
-										  <input  type='text' name='priority' id='priority' value='{{ $row['priority'] }}' 
-						     class='form-control form-control-sm ' /> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Short Description" class=" control-label col-md-4 text-left"> Short Description </label>
-										<div class="col-md-6">
-										  <textarea name='short_description' rows='5' id='short_description' class='form-control form-control-sm '  
-				           >{{ $row['short_description'] }}</textarea> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Footer" class=" control-label col-md-4 text-left"> Footer </label>
-										<div class="col-md-6">
-										  <input  type='text' name='footer' id='footer' value='{{ $row['footer'] }}' 
+										  <input  type='text' name='status' id='status' value='{{ $row['status'] }}' 
 						     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
@@ -122,15 +105,6 @@
    <script type="text/javascript">
 	$(document).ready(function() { 
 		
-		
-		$("#parent_id").jCombo("{!! url('categories/comboselect?filter=category:id:title') !!}",
-		{  selected_value : '{{ $row["parent_id"] }}' });
-		
-		$("#status").jCombo("{!! url('categories/comboselect?filter=con_status:id:name') !!}",
-		{  selected_value : '{{ $row["status"] }}' });
-		
-		$("#is_featured").jCombo("{!! url('categories/comboselect?filter=isfeatured:id:title') !!}",
-		{  selected_value : '{{ $row["is_featured"] }}' });
 		 
 
 		$('.removeCurrentFiles').on('click',function(){
