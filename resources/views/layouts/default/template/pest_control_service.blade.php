@@ -182,8 +182,46 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.bread-crumb li a {
-    color: #fff !important;
+
+.vertical-menu li a
+{
+    display: -ms-flexbox;
+    display: -webkit-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    -ms-flex-pack: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    background: #F6F6F6;
+    padding: 17px 17px 19px 20px;
+    line-height: 24px;
+    color: #000;
+    margin-top: 10px;
+}
+.vertical-menu li:first-child a
+{
+    margin-top: 0;
+}
+.vertical-menu li.selected a
+{
+    background: #0072AE;
+}
+.vertical-menu li a:hover,
+.vertical-menu li:hover a span
+{
+    color: #0072AE;
+}
+.vertical-menu li.selected a,
+.vertical-menu li.selected a span
+{
+    color: #FFF;
 }
 
 </style>
@@ -234,7 +272,7 @@ input[type=number]::-webkit-outer-spin-button {
 				    @if(!empty($all_category))
 				    @foreach($all_category as $category)
 					<li>
-						<a style="color: #000" href="<?php echo route('single.service', $category->id) ?>" title="{{ $category->title }}">
+						<a href="<?php echo route('single.service', $category->id) ?>" title="{{ $category->title }}">
 							{{ $category->title }}
 						</a>
 					</li>

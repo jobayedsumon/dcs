@@ -325,6 +325,18 @@ h2.box-header {
     .firstRow:nth-child(2) {
         width: 150px !important;
     }
+
+    .social-icons a::before {
+        position: relative;
+        top: 8px;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .centerStyle {
+        text-align: center !important;
+    }
 }
 
 
@@ -425,11 +437,9 @@ h2.box-header {
                     <h2 class="box-header">OUR SERVICES</h2>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row ">
 
-
-
-                <div class="col-md-12 mt-3">
+                <div class="col-md-12 mt-3 pl-0 centerStyle">
                     <a class="serviceLink" href="{{ route('single.service', $featuredServices[0]->id) }}">
                         {{ $featuredServices[0]->title }}
                     </a>
@@ -440,14 +450,14 @@ h2.box-header {
                 <div class="row">
                     <div class="column column-1-4">
                         <ul class="features-list align-right margin-top-30">
-                            <li>
+                            <li style="text-align: justify">
                                 <a class="serviceLink" href="{{ route('single.service', $featuredServices[2]->id) }}">
                                     {{ $featuredServices[2]->title }}
                                 </a>
                                 <a class="" href="{{ route('single.service', $featuredServices[2]->id) }}"> <p class="serviceDetails">{{ $featuredServices[2]->short_description }}</p></a>
 
                             </li>
-                            <li>
+                            <li style="text-align: justify">
                                 <a class="serviceLink" href="{{ route('single.service', $featuredServices[4]->id) }}">
                                     {{ $featuredServices[4]->title }}
                                 </a>
@@ -480,14 +490,14 @@ h2.box-header {
                     </div>
                     <div class="column column-1-4">
                         <ul class="features-list margin-top-30">
-                            <li>
+                            <li style="text-align: justify">
                                 <a class="serviceLink" href="{{ route('single.service', $featuredServices[1]->id) }}">
                                     {{ $featuredServices[1]->title }}
                                 </a>
                                 <a class="" href="{{ route('single.service', $featuredServices[1]->id) }}"> <p class="serviceDetails">{{ $featuredServices[1]->short_description }}</p></a>
 
                             </li>
-                            <li>
+                            <li style="text-align: justify">
                                 <a class="serviceLink" href="{{ route('single.service', $featuredServices[5]->id) }}">
                                     {{ $featuredServices[5]->title }}
                                 </a>
@@ -497,7 +507,7 @@ h2.box-header {
                         </ul>
                     </div>
                 </div>
-                <div class="align-center padding-bottom-16 mt-3">
+                <div class="padding-bottom-16 mt-3 centerStyle">
                     <a class="serviceLink" href="{{ route('single.service', $featuredServices[3]->id) }}">
                         {{ $featuredServices[3]->title }}
                     </a>

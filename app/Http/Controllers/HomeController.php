@@ -256,7 +256,7 @@ class HomeController extends Controller {
 
 					$posts = $posts->groupBy('tb_pages.pageID')->orderBy('pageID', 'DESC')->paginate(5);
 				}
-		$this->data['title']		= 'Post Articles | Dcs-Organization Ltd.';
+		$this->data['title']		= 'Post Articles | DCS-Organization Ltd.';
 		$this->data['posts']		= $posts;
 		$this->data['pages']		= 'secure.posts.posts';
 		$this->data['popular']		= Post::lists('popular');

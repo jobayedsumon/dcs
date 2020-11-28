@@ -215,7 +215,7 @@ background: linear-gradient(90deg, rgba(8, 94, 173, .8) 0%, rgba(8, 94, 173, .8)
 				<p class="text-white" style="font-size: 11px">Disclaimer | © 2020 DCS Organization Ltd. | Designed by
 					<a href="https://vmsl.com.bd/">VMSL</a>
 				</p>
-                <ul class="social-icons align-center m-0 mt-1">
+                <ul class="social-icons align-center m-0 mt-1" style="display: flex">
                     <li>
                         <a target="_blank" href="https://www.facebook.com/dcsorg" class="social-facebook" title="facebook"></a>
                     </li>
